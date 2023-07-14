@@ -1,32 +1,38 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
- * main - Entry point
- * Description: 'print comb of a pair of two digit numb,without any repetition'
- * Return: Always 0
+ * main - Entry Point 
+ * Description: write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
  */
 int main(void)
 {
-	int num1, num2;
+	int firstDigit = 0, secondDigit;
 
-	for (num1 = 0; num1 <= 99; num1++)
+	while (firstDigit <= 99)
 	{
-		for (num2 = 0; num2 <= 99; num2++)
+		secondDigit = firstDigit;
+		while (secondDigit <= 99)
 		{
-			putchar((num1 / 10) + '0');
-			putchar((num1 % 10) + '0');
-			putchar(' ');
-			putchar((num2 / 10) + '0');
-			putchar((num2 % 10) + '0');
+			if (secondDigit != firstDigit)
+			{
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((secondDigit / 10) + 48);
+				putchar((secondDigit % 10) + 48);
 
-			if (num1 == 99 && num2 == 99)
-				continue;
-
-			putchar(',');
-			putchar(' ');
+				if (firstDigit != 98 || secondDigit != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			secondDigit++;
 		}
+		firstDigit++;
 	}
-
 	putchar('\n');
-
 	return (0);
 }
+

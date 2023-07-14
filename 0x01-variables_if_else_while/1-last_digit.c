@@ -2,29 +2,23 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * mzin - Entry point
- * Descrition: 'get the last degiti of a number'
- * Return: always 0
+ * main - Entry point
+ * Return: Always return 0 (Success)
  */
 int main(void)
 {
 	int n;
-	int ld;
+
+	int m;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	ld = n % 10;
-	if (ld > 5)
-	{
-		printf("Last digit of %d is %d and is greater then 5\n", n, ld);
-	}
-	else if (ld == 0)
-	{
-		printf("Last digit of %d is %d and is 0\n", n, ld);
-	}
-	else
-	{
-		printf("Last digit of %d is %d and less than 6 and not 0\n", n, ld);
-	}
+	m = n % 10;
+	if (m > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, m);
+	if (m == 0)
+		printf("Last digit of %d is %d and is 0\n", n, m);
+	if (m < 6 && m != 0)
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, m);
 	return (0);
 }

@@ -1,16 +1,18 @@
 #include <stdio.h>
-
 /**
- * main - Print the alphabetic 
- * Return: Always 0 (Success)
+ * main - Entry point
+ * Description: 'Print alphabets lowercase'
+ * Return: Always 0
  */
-
 int main(void)
 {
-	char c;
+	int n = 97;
 
-	for (c = 'a'; c <= 'z'; c++)
-	putchar(c);
+	while (n <= 122)
+	{
+		putchar(n);
+		n++;
+	}
 	putchar('\n');
 	return (0);
 }

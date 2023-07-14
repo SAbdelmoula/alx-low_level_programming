@@ -1,38 +1,36 @@
 #include<stdio.h>
 /**
- * main - Entry Point 
- * Description: write a program that prints all possible
- * different combinations of two digits
- * Return: 0
+ * main - Entry point
+ * description: print comb of two digits
+ * Return: Always 0
  */
 int main(void)
 {
-	int firstDigit = 0, secondDigit;
+	int FirstD = 0, SecondD;
 
-	while (firstDigit <= 99)
+	while (FirstD <= 99)
 	{
-		secondDigit = firstDigit;
-		while (secondDigit <= 99)
+		SecondD = FirstD;
+		while (SecondD <= 99)
 		{
-			if (secondDigit != firstDigit)
+			if (SecondD != FirstD)
 			{
-				putchar((firstDigit / 10) + 48);
-				putchar((firstDigit % 10) + 48);
+				putchar((FirstD / 10) + 48);
+				putchar((FirstD % 10) + 48);
 				putchar(' ');
-				putchar((secondDigit / 10) + 48);
-				putchar((secondDigit % 10) + 48);
+				putchar((SecondD / 10) + 48);
+				putchar((SecondD % 10) + 48);
 
-				if (firstDigit != 98 || secondDigit != 99)
+				if (FirstD != 98 || SecondD != 99)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
-			secondDigit++;
+			SecondD++;
 		}
-		firstDigit++;
+		FirstD++;
 	}
 	putchar('\n');
 	return (0);
 }
-

@@ -8,22 +8,32 @@ int main(void)
 {
 	int n = '0';
 	int m = '0';
+	int j = '0';
 
-	for (n = '0'; n <= '9'; n++)
+	while (n <= '7')
 	{
-		for (m = '0'; m <= '9'; m++)
+		while (m <= '8')
 		{
-			if (!((n == m) || (m > n)))
+			while (j <= '9')
 			{
-				putchar(m);
-				putchar(n);
-				if (!(n == '9' && m == '8'))
+				if (n < m && m < j)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(n);
+					putchar(m);
+					putchar(j);
+					if (!(n == '7' && m == '8' && j == '9'))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
+				j++;
 			}
+			j = '0';
+			m++;
 		}
+		m = '0';
+		n++;
 	}
 	putchar('\n');
 	return (0);

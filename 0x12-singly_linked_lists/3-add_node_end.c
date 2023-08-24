@@ -6,7 +6,6 @@
  * add_node_end - Add a New node At the End of a L-list
  * @head: Double Pointer to the list_t list
  * @str: String to put in the new node
- *
  * Return: Address of the new element, or NULL if it failed
  */
 list_t *add_node_end(list_t **head, const char *str)
